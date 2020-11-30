@@ -12,6 +12,10 @@
             v-if="currency.slug === 'paypals'"
             :paypals="currency.paypals"
           />
+          <Webmonies
+            v-if="currency.slug === 'webmonies'"
+            :webmonies="currency.webmonies"
+          />
         </div>
       </div>
     </div>
@@ -22,10 +26,12 @@
 import { getMetaTags } from '../../utils/seo'
 import { getStrapiMedia } from '../../utils/medias'
 import Paypals from '../../components/Paypals.vue'
+import Webmonies from '../../components/Webmonies.vue'
 
 export default {
   components: {
-    Paypals
+    Paypals,
+    Webmonies
   },
   async asyncData({ $strapi, params }) {
     const matchingCurrencies = await $strapi.find('currencies', {
@@ -34,6 +40,9 @@ export default {
     return {
       currency: matchingCurrencies[0],
       paypals: await $strapi.find('paypals', {
+        'currency.title': params.slug
+      }),
+      webmonies: await $strapi.find('webmonies', {
         'currency.title': params.slug
       }),
       global: await $strapi.find('global')
