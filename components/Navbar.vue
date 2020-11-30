@@ -1,3 +1,7 @@
+/* eslint-disable prettier/prettier */ /* eslint-disable vue/comment-directive
+*/ /* eslint-disable vue/comment-directive */ /* eslint-disable
+vue/comment-directive */ /* eslint-disable prettier/prettier */ /*
+eslint-disable prettier/prettier */ /* eslint-disable prettier/prettier */
 <template>
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
@@ -14,6 +18,15 @@
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
       </a>
+
+      <nuxt-link
+        v-for="category in categories"
+        :key="category.id"
+        :to="{ name: 'categories-slug', params: { slug: category.slug } }"
+        class="navbar-item"
+      >
+        {{ category.th }}
+      </nuxt-link>
     </div>
 
     <div id="navbarBasicExample" class="navbar-menu">
@@ -46,11 +59,18 @@
     </div>
   </nav>
 </template>
-
 <script>
 import { mapGetters } from 'vuex'
 
 export default {
+  async fetch() {
+    this.categories = await this.$strapi.find('categories')
+  },
+  data() {
+    return {
+      categories: []
+    }
+  },
   computed: {
     ...mapGetters(['isAuthenticated', 'loggedInUser'])
   },

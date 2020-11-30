@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xsl:stylesheet="https://fonts.googleapis.com/css?family=Prompt" width="360" height="430">
+   <rect width="360" height="430" fill="#ffffff" />
+
+    <defs>
+        <radialGradient id="grad1" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+            <stop offset="0%" style="stop-color:#3366cc;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#25488e;stop-opacity:1" />
+        </radialGradient>
+    </defs>
+
+    <ellipse cx="280" cy="220" rx="68" ry="68" fill="url(#grad1)" stroke="#ffffff" stroke-width="4" />
+    <ellipse cx="89" cy="220" rx="78" ry="78" fill="url(#grad1)" stroke="#ffffff" stroke-width="4" />
+    <ellipse cx="190" cy="100" rx="93" ry="93" fill="url(#grad1)" stroke="#ffffff" stroke-width="4" />
+
+    <text fill="ghostwhite" font-size="108" font-weight="normal" font-family="Liciday" x="250" y="255">€</text>
+    <text fill="ghostwhite" font-size="114" font-weight="normal" font-family="Liciday" x="55" y="260">฿</text>
+    <text fill="ghostwhite" font-size="170" font-weight="normal" font-family="Liciday" x="150" y="158">$</text>
+    
+    <text fill="url(#grad1)" x="13" y="370" font-size="42" font-weight="bold" font-family="Sans-serif" stroke="#ffffff" stroke-width="1">FS-EXCHANGER</text>
+    <text fill="url(#grad1)" x="35" y="410" font-size="28" font-weight="bold" font-family="Sans-serif" stroke="#ffffff" stroke-width="1">E-Currency Exchange</text>
+</svg>
