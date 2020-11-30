@@ -5,8 +5,13 @@
     <div class="container">
       <div class="columns">
         <div class="column is-4 is-offset-4">
-          {{ category.th }}
-          <Currencies :currencies="category.currencies || []" />
+          {{ currency.th }}
+          <br />
+          <br />
+          <Paypals
+            v-if="currency.slug === 'paypals'"
+            :paypals="currency.paypals"
+          />
         </div>
       </div>
     </div>
@@ -16,20 +21,20 @@
 <script>
 import { getMetaTags } from '../../utils/seo'
 import { getStrapiMedia } from '../../utils/medias'
-import Currencies from '../../components/Currencies.vue'
+import Paypals from '../../components/Paypals.vue'
 
 export default {
   components: {
-    Currencies
+    Paypals
   },
   async asyncData({ $strapi, params }) {
-    const matchingCategories = await $strapi.find('categories', {
+    const matchingCurrencies = await $strapi.find('currencies', {
       slug: params.slug
     })
     return {
-      category: matchingCategories[0],
-      currencies: await $strapi.find('currencies', {
-        'category.name': params.slug
+      currency: matchingCurrencies[0],
+      paypals: await $strapi.find('paypals', {
+        'currency.title': params.slug
       }),
       global: await $strapi.find('global')
     }
@@ -42,8 +47,9 @@ export default {
     const { defaultSeo, favicon, siteName } = this.global
     const fullSeo = {
       ...defaultSeo,
-      metaTitle: `${this.category.name} articles`,
-      metaDescription: `All articles about ${this.category.description}`
+      metaTitle: this.currency.title,
+      metaDescription: this.currency.description,
+      shareImage: this.currency.image
     }
     return {
       title: fullSeo.metaTitle,
