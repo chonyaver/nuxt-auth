@@ -1,5 +1,3 @@
-/* eslint-disable vue/comment-directive */ /* eslint-disable prettier/prettier
-*/
 <template>
   <div>
     <div class="row">
@@ -26,26 +24,25 @@ export default {
       const file = e.target.files[0]
 
       /* Make sure file exists */
-      if (!file) return
+      if (!file) return;
 
       /* create a reader */
-      const readData = (f) =>
-        new Promise((resolve) => {
-          const reader = new FileReader()
-          reader.onloadend = () => resolve(reader.result)
-          reader.readAsDataURL(f)
-        })
+      const readData = (f) => new Promise((resolve) => {
+          const reader = new FileReader();
+          reader.onloadend = () => resolve(reader.result);
+          reader.readAsDataURL(f);
+        });
 
       /* Read data */
-      const data = await readData(file)
+      const data = await readData(file);
 
       /* upload the converted data */
       // eslint-disable-next-line no-unused-vars
       const instance = await this.$Cloudinary.upload(data, {
         folder: 'strapi',
         uploadPreset: 'kyq2vccp'
-      })
+      });
     }
   }
-}
+};
 </script>

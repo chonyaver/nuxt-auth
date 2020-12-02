@@ -1,5 +1,9 @@
 {
-    "semi": false,
+    "semi": true,
     "arrowParens": "always",
-    "singleQuote": true
+    "singleQuote": true,
+    "bracketSpacing": true,
+    "jsxSingleQuote": true,
+    "jsxBracketSameLine": false,
+    "htmlWhitespaceSensitivity": "css"
 }
