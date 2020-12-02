@@ -1,7 +1,3 @@
-/* eslint-disable prettier/prettier */ /* eslint-disable vue/comment-directive
-*/ /* eslint-disable vue/comment-directive */ /* eslint-disable
-vue/comment-directive */ /* eslint-disable prettier/prettier */ /*
-eslint-disable prettier/prettier */ /* eslint-disable prettier/prettier */
 <template>
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
@@ -58,9 +54,10 @@ eslint-disable prettier/prettier */ /* eslint-disable prettier/prettier */
       </div>
     </div>
   </nav>
-</template>
+</template> <!--  -->
+
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters } from 'vuex';
 
 export default {
   async fetch() {

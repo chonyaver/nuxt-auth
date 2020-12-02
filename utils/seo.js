@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { getStrapiMedia } from './medias';
 
 export function getMetaTags(seo) {
