@@ -57,7 +57,8 @@ export default {
         // Doc: https://github.com/nuxt-community/dotenv-module
         '@nuxtjs/dotenv',
         '@nuxtjs/auth',
-        '@nuxtjs/strapi'
+        '@nuxtjs/strapi',
+        '@nuxtjs/cloudinary',
     ],
     /*
      ** Axios module configuration
@@ -157,6 +158,14 @@ export default {
                 type: 'collection'
             }
         ]
+    },
+
+    cloudinary: {
+        cloudName: process.env.CLOUD_NAME || 'hltvo8sog',
+        apiKey: process.env.API_KEY || '884288945295763',
+        apiSecret: process.env.API_SECRET || 'krBjEbcaMLhX6neridNWcelveLY',
+        secure: true,
+        useComponent: true,
     },
 
     /*

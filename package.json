@@ -15,8 +15,11 @@
     "@nuxtjs/auth": "^4.9.1",
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/bulma": "^1.2.1",
+    "@nuxtjs/cloudinary": "^1.0.2",
     "@nuxtjs/dotenv": "^1.4.0",
     "@nuxtjs/strapi": "^0.1.8",
+    "fs": "^0.0.1-security",
+    "jwt": "^0.2.0",
     "nuxt": "^2.0.0",
     "util": "^0.12.3",
     "vue": "^2.6.12"
